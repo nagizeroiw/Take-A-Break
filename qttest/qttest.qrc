@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/qttest">
+        <file alias="icon.png">Resources/icon.png</file>
+        <file>Resources/copy.png</file>
+    </qresource>
+</RCC>
