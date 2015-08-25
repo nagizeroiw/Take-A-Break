@@ -22,11 +22,9 @@ class MyTray : public QSystemTrayIcon
 public:
     MyTray() {
 
-        // main window
-        mainWindow = new MyWindow(this);
-
         // break time
         breaktime_msec = 1000 * 60 * 30; // half an hour
+        breaktime_str = new QString("30");
 
         // build timer
         timer = new QTimer();
@@ -75,7 +73,7 @@ public:
         window_open = new QAction(menu);
         window_open->setText("Config");
         menu->addAction(window_open);
-        connect(window_open, SIGNAL(triggered(bool)), mainWindow, SLOT(open()));
+        connect(window_open, SIGNAL(triggered(bool)), this, SLOT(openConfig()));
 
         // add menu
         this->setContextMenu(menu);
@@ -94,6 +92,9 @@ public:
                           "From now on, you will be reminded "
                           "to take a break for every 30 minutes."));
     }
+
+signals:
+    void userOpenConfig();
 
 public slots:
     void timeoutMessage() {
@@ -121,26 +122,35 @@ public slots:
         timer->stop();
         timer->start(breaktime_msec);
         this->showMessage("Timer revived!", 
-                          QString("Timer has been cleared.\n"
-                          "Next reminder comes in 30 minutes."));
+                          QString("Timer has been cleared.\n") +
+                          QString("Next reminder comes in ") + *breaktime_str + QString("minutes."));
     }
     void setBreaktimemsec(int new_index) {
         int new_msec;
         if (new_index == 0) {
             new_msec = 1000 * 60 * 30;
+            *breaktime_str = "30";
         }
-        else if (new_index == 0) {
+        else if (new_index == 1) {
             new_msec = 1000 * 60 * 40;
+            *breaktime_str = "40";
         }
-        else if (new_index == 0) {
+        else if (new_index == 2) {
             new_msec = 1000 * 60 * 60;
+            *breaktime_str = "60";
         }
-        else if (new_index == 0) {
+        else if (new_index == 3) {
             new_msec = 1000 * 60 * 120;
+            *breaktime_str = "120";
         }
+
         breaktime_msec = new_msec;
         this->showMessage("Config Saved", "");
         reviveTimer();
+    }
+    void openConfig() {
+        window_open->setDisabled(true);
+        emit userOpenConfig();
     }
 private:
 
@@ -150,13 +160,11 @@ private:
     QAction* action_start;
     QAction* action_quit;
     QAction* window_open;
-    QAction* window_close;
 
     QTimer* timer;
 
-    MyWindow* mainWindow;
-
     int breaktime_msec;
+    QString* breaktime_str;
 
     MyTray(const MyTray& t);
     MyTray& operator=(const MyTray& t);

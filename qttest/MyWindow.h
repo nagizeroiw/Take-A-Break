@@ -1,17 +1,14 @@
-
+#ifndef MYW_H
+#define MYW_H
 #include <QMainWindow>
 #include <QSystemTrayIcon>
 #include <QComboBox>
 #include <QObject>
 
-class MyTray;
-
 class MyWindow : public QMainWindow {
     Q_OBJECT
 public:
-    MyWindow(void* con_tray) {
-
-        tray = con_tray;
+    MyWindow() {
 
         this->setWindowTitle("Take-A-Break Config");
 
@@ -29,10 +26,12 @@ public:
         timeChoose->addItem("1 hour");
         timeChoose->addItem("2 hour");
 
-        connect(timeChoose, SIGNAL(currentIndexChanged(int)), (MyTray*)tray, SLOT(setBreaktimeMsec(int)));
+        connect(timeChoose, SIGNAL(currentIndexChanged(int)), this, SLOT(commitConfig(int)));
 
         this->setHidden(true);
     }
+signals:
+    void userConfig(int index);
 public slots:
     void open() {
         this->setHidden(false);
@@ -40,8 +39,11 @@ public slots:
     void close() {
         this->setHidden(true);
     }
+    void commitConfig(int index) {
+        emit userConfig(index);
+    }
 private:
-    void* tray;
     QComboBox* timeChoose;
 };
 
+#endif 

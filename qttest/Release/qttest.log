@@ -1,22 +1,22 @@
-﻿生成启动时间为 2015/8/25 11:23:36。
+﻿生成启动时间为 2015/8/25 14:44:39。
      1>项目“D:\S\playing\qttest\qttest\qttest.vcxproj”在节点 2 上(Build 个目标)。
      1>CustomBuild:
          Moc'ing qttest.h...
-         Moc'ing MyWindow.h...
        ClCompile:
-         D:\U\drivers\vs2012\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\U\drivers\Qt\5.5\msvc2012\include /I.\GeneratedFiles\Release /ID:\U\drivers\Qt\5.5\msvc2012\include\QtCore /ID:\U\drivers\Qt\5.5\msvc2012\include\QtGui /ID:\U\drivers\Qt\5.5\msvc2012\include\QtWidgets /ID:\U\drivers\Qt\5.5\msvc2012\include\QtTest /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D QT_TESTLIB_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Release\moc_MyWindow.cpp GeneratedFiles\Release\moc_qttest.cpp main.cpp
-         moc_MyWindow.cpp
-     1>d:\s\playing\qttest\qttest\generatedfiles\release\../../MyWindow.h(32): error C2664: “QMetaObject::Connection QObject::connect(const QObject *,const char *,const QObject *,const char *,Qt::ConnectionType)”: 不能将参数 3 从“MyTray *”转换为“const QObject *”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
+         D:\U\drivers\vs2012\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /ID:\U\drivers\Qt\5.5\msvc2012\include /I.\GeneratedFiles\Release /ID:\U\drivers\Qt\5.5\msvc2012\include\QtCore /ID:\U\drivers\Qt\5.5\msvc2012\include\QtGui /ID:\U\drivers\Qt\5.5\msvc2012\include\QtWidgets /ID:\U\drivers\Qt\5.5\msvc2012\include\QtTest /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /D QT_TESTLIB_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Release\moc_TakeABreak.cpp GeneratedFiles\Release\moc_qttest.cpp main.cpp
+         moc_TakeABreak.cpp
          moc_qttest.cpp
-     1>d:\s\playing\qttest\qttest\MyWindow.h(32): error C2664: “QMetaObject::Connection QObject::connect(const QObject *,const char *,const QObject *,const char *,Qt::ConnectionType)”: 不能将参数 3 从“MyTray *”转换为“const QObject *”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
          main.cpp
-     1>d:\s\playing\qttest\qttest\MyWindow.h(32): error C2664: “QMetaObject::Connection QObject::connect(const QObject *,const char *,const QObject *,const char *,Qt::ConnectionType)”: 不能将参数 3 从“MyTray *”转换为“const QObject *”
-                 与指向的类型无关；转换要求 reinterpret_cast、C 样式转换或函数样式转换
          正在生成代码...
-     1>已完成生成项目“D:\S\playing\qttest\qttest\qttest.vcxproj”(Build 个目标)的操作 - 失败。
+       Link:
+         D:\U\drivers\vs2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\S\playing\qttest\Win32\Release\\Take A Break.exe" /NOLOGO /LIBPATH:D:\U\drivers\Qt\5.5\msvc2012\lib qtmain.lib Qt5Core.lib Qt5Gui.lib Qt5Widgets.lib Qt5Test.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"D:\S\playing\qttest\Win32\Release\Take A Break.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\S\playing\qttest\Win32\Release\Take A Break.lib" /MACHINE:X86 /SAFESEH Release\qrc_qttest.obj
+         Release\moc_MyWindow.obj
+         Release\moc_qttest.obj
+         Release\moc_TakeABreak.obj
+         Release\main.obj
+         qttest.vcxproj -> D:\S\playing\qttest\Win32\Release\Take A Break.exe
+     1>已完成生成项目“D:\S\playing\qttest\qttest\qttest.vcxproj”(Build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:02.14
+已用时间 00:00:02.86
