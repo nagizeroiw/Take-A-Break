@@ -1,0 +1,5 @@
+-TODO
+
+	-let user determine the breaktime.
+	
+	-let user choose to "break" or "wait a minute" each time noticed'.
