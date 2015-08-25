@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MyTray_t {
-    QByteArrayData data[6];
-    char stringdata0[56];
+    QByteArrayData data[8];
+    char stringdata0[83];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,11 +34,14 @@ QT_MOC_LITERAL(1, 7, 14), // "timeoutMessage"
 QT_MOC_LITERAL(2, 22, 0), // ""
 QT_MOC_LITERAL(3, 23, 9), // "stopTimer"
 QT_MOC_LITERAL(4, 33, 10), // "startTimer"
-QT_MOC_LITERAL(5, 44, 11) // "reviveTimer"
+QT_MOC_LITERAL(5, 44, 11), // "reviveTimer"
+QT_MOC_LITERAL(6, 56, 16), // "setBreaktimemsec"
+QT_MOC_LITERAL(7, 73, 9) // "new_index"
 
     },
     "MyTray\0timeoutMessage\0\0stopTimer\0"
-    "startTimer\0reviveTimer"
+    "startTimer\0reviveTimer\0setBreaktimemsec\0"
+    "new_index"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +51,7 @@ static const uint qt_meta_data_MyTray[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,16 +59,18 @@ static const uint qt_meta_data_MyTray[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x0a /* Public */,
-       3,    0,   35,    2, 0x0a /* Public */,
-       4,    0,   36,    2, 0x0a /* Public */,
-       5,    0,   37,    2, 0x0a /* Public */,
+       1,    0,   39,    2, 0x0a /* Public */,
+       3,    0,   40,    2, 0x0a /* Public */,
+       4,    0,   41,    2, 0x0a /* Public */,
+       5,    0,   42,    2, 0x0a /* Public */,
+       6,    1,   43,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    7,
 
        0        // eod
 };
@@ -80,10 +85,10 @@ void MyTray::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 1: _t->stopTimer(); break;
         case 2: _t->startTimer(); break;
         case 3: _t->reviveTimer(); break;
+        case 4: _t->setBreaktimemsec((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject MyTray::staticMetaObject = {
@@ -111,13 +116,13 @@ int MyTray::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }
