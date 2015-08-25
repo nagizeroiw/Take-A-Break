@@ -1,25 +1,39 @@
 #ifndef MYW_H
 #define MYW_H
-#include <QMainWindow>
+#include <QWidget>
 #include <QSystemTrayIcon>
 #include <QComboBox>
 #include <QObject>
+#include <QLayout>
+#include <QCloseEvent>
+#include <QLabel>
 
-class MyWindow : public QMainWindow {
+class MyWindow : public QWidget {
     Q_OBJECT
 public:
     MyWindow() {
 
         this->setWindowTitle("Take-A-Break Config");
 
+        QIcon* icon = new QIcon(":/qttest/Resources/copy.png");
+        this->setWindowIcon(*icon);
+
         this->setFixedWidth(600);
-        this->setFixedHeight(400);
+        this->setFixedHeight(200);
 
-        timeChoose = new QComboBox(this);
+        QBoxLayout* layout = new QBoxLayout(QBoxLayout::Direction::TopToBottom, this);
 
-        timeChoose->setGeometry(200, 100, 200, 50);
+        QLabel* text = new QLabel(QString("Break time"));
+        text->setFixedHeight(50);
+        layout->addWidget(text);
+        layout->setAlignment(text, Qt::AlignHCenter);
+
+        timeChoose = new QComboBox();
         timeChoose->setFixedWidth(200);
         timeChoose->setFixedHeight(50);
+
+        layout->addWidget(timeChoose);
+        layout->setAlignment(timeChoose, Qt::AlignHCenter);
 
         timeChoose->addItem("30 minutes");
         timeChoose->addItem("40 minutes");
@@ -30,8 +44,14 @@ public:
 
         this->setHidden(true);
     }
+    void closeEvent(QCloseEvent* e) {
+        emit currentClose();
+        this->setVisible(false);
+        e->ignore();
+    }
 signals:
     void userConfig(int index);
+    void currentClose();
 public slots:
     void open() {
         this->setHidden(false);

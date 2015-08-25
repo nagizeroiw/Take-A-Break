@@ -38,12 +38,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_qttest.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_qttest.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_qttest.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -59,11 +53,14 @@
     <ClCompile Include="GeneratedFiles\Release\moc_TakeABreak.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MyTray.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MyTray.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="qttest.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="qttest.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
@@ -71,6 +68,9 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="TakeABreak.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="MyTray.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
