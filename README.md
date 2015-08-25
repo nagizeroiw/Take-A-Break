@@ -7,10 +7,10 @@ Currently, it could already perform expectly and elegantly. Commitments are alwa
 
 For convenience
 
-# To-do
+## To-do
 
 -let user choose to "ok I will break" or "wait a minute and try to pull me up again". (new API of Windows10 needed?)
 
-# Done
+## Done
 
 -let user could determine the breaktime instead of 30 minutes.
