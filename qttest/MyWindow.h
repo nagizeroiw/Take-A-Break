@@ -23,7 +23,7 @@ public:
 
         QBoxLayout* layout = new QBoxLayout(QBoxLayout::Direction::TopToBottom, this);
 
-        QLabel* text = new QLabel(QString("Break time"));
+        QLabel* text = new QLabel(QString("Break time config"));
         text->setFixedHeight(50);
         layout->addWidget(text);
         layout->setAlignment(text, Qt::AlignHCenter);
