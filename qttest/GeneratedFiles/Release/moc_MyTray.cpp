@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MyTray_t {
-    QByteArrayData data[11];
-    char stringdata0[128];
+    QByteArrayData data[12];
+    char stringdata0[133];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,13 +39,14 @@ QT_MOC_LITERAL(6, 59, 11), // "reviveTimer"
 QT_MOC_LITERAL(7, 71, 16), // "setBreaktimemsec"
 QT_MOC_LITERAL(8, 88, 9), // "new_index"
 QT_MOC_LITERAL(9, 98, 10), // "openConfig"
-QT_MOC_LITERAL(10, 109, 18) // "revive_window_open"
+QT_MOC_LITERAL(10, 109, 18), // "revive_window_open"
+QT_MOC_LITERAL(11, 128, 4) // "quit"
 
     },
     "MyTray\0userOpenConfig\0\0timeoutMessage\0"
     "stopTimer\0startTimer\0reviveTimer\0"
     "setBreaktimemsec\0new_index\0openConfig\0"
-    "revive_window_open"
+    "revive_window_open\0quit"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +56,7 @@ static const uint qt_meta_data_MyTray[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,16 +64,17 @@ static const uint qt_meta_data_MyTray[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x06 /* Public */,
+       1,    0,   59,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   55,    2, 0x0a /* Public */,
-       4,    0,   56,    2, 0x0a /* Public */,
-       5,    0,   57,    2, 0x0a /* Public */,
-       6,    0,   58,    2, 0x0a /* Public */,
-       7,    1,   59,    2, 0x0a /* Public */,
-       9,    0,   62,    2, 0x0a /* Public */,
-      10,    0,   63,    2, 0x0a /* Public */,
+       3,    0,   60,    2, 0x0a /* Public */,
+       4,    0,   61,    2, 0x0a /* Public */,
+       5,    0,   62,    2, 0x0a /* Public */,
+       6,    0,   63,    2, 0x0a /* Public */,
+       7,    1,   64,    2, 0x0a /* Public */,
+       9,    0,   67,    2, 0x0a /* Public */,
+      10,    0,   68,    2, 0x0a /* Public */,
+      11,    0,   69,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -83,6 +85,7 @@ static const uint qt_meta_data_MyTray[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -103,6 +106,7 @@ void MyTray::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 5: _t->setBreaktimemsec((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 6: _t->openConfig(); break;
         case 7: _t->revive_window_open(); break;
+        case 8: _t->quit(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -142,13 +146,13 @@ int MyTray::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

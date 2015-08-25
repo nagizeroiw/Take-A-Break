@@ -42,7 +42,7 @@ public:
         action_quit->setText("Quit      ");
         action_quit->setShortcut(QKeySequence(tr("Ctrl+Q")));
         menu->addAction(action_quit);
-        connect(action_quit, SIGNAL(triggered(bool)), qApp, SLOT(quit()));
+        connect(action_quit, SIGNAL(triggered(bool)), this, SLOT(quit()));
 
         menu->addSeparator();
 
@@ -155,6 +155,10 @@ public slots:
     }
     void revive_window_open() {
         window_open->setEnabled(true);
+    }
+    void quit() {
+        this->setVisible(false);
+        qApp->quit();
     }
 private:
 
